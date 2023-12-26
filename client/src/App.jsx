@@ -19,6 +19,7 @@ import AdminLogin from './admin/AdminLogin';
 import AdminDashboard from './admin/AdminDashboard';
 import Admin from './admin/Admin';
 import AdminListing from './admin/AdminListing';
+import EditProperty from './admin/EditProperty';
 
 function App() {
   const location = useLocation();
@@ -48,6 +49,7 @@ function App() {
       <Route path='/admin' element={<Admin/>}>
       <Route path='admin-dashboard' element={<AdminDashboard/>}/>
       <Route path='admin-listing' element={<AdminListing/>}/>
+      <Route path='edit-property/:propertyId' element={<EditProperty/>} />
       </Route>
 
     </Routes>

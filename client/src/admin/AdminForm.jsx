@@ -23,7 +23,7 @@ const AdminForm = ({ type, handleSubmit, addedPhotos, setAddedPhotos, propertyNa
       uploadedUrls.push(url);
     }
 
-    setPhotoLink([...photoLink,uploadedUrls]);
+    setPhotoLink((prevPhotoLink) => [...prevPhotoLink, ...uploadedUrls.flat()]);
   } catch (error) {
     console.error('Error uploading files:', error);
   }
@@ -113,7 +113,7 @@ const AdminForm = ({ type, handleSubmit, addedPhotos, setAddedPhotos, propertyNa
 
     <div className='d-flex flex-column w-50 outer-pic'>
     <div className='pic-div'>
-      {photoLink.map((photo, index)=>(
+      {photoLink && photoLink.map((photo, index)=>(
         <img src={photo} key={`index-${index}`} className='img-fluid' alt='property' />
       ))}
     </div>

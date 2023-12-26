@@ -1,8 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import AdminNavbar from './AdminNavbar'
-import AdminForm from './AdminForm'
+import { useParams, useNavigate } from 'react-router-dom';
+import AdminForm from './AdminForm';
 
-const AdminListing = () => {
+const EditProperty = () => {
+  const { propertyId } = useParams();
+  const navigate = useNavigate();
+
   const [propertyName, setPropertyName] = useState('');
   const [address, setAddress] = useState('');
   const [saleType, setSaleType] = useState('forsale');
@@ -16,15 +20,36 @@ const AdminListing = () => {
   const [bathroom, setBathroom] = useState('');
   const [description, setDescription] = useState('');
 
-   const handleSubmit = async (e) => {
+  
+  useEffect(() => {
+    const fetchPropertyDetails = async () => {
+        try {
+          const response = await fetch(`http://localhost:3000/api/admin/properties/${propertyId}`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          const data = await response.json();
+          setPropertyName(data.propertyName),setAddress(data.address),setSaleType(data.saleType),setFeatured(data.featured),setAreaSq(data.areaSq),setPropertyType(data.propertyType),setNeighbourHood(data.neighbourhood),setPhotoLink(data.photoLink),setBeds(data.beds),setBathroom(data.bathroom),setDescription(data.description)
+        } catch (error) {
+          console.error('Error fetching property details:', error.message);
+        }
+       
+      };
+    fetchPropertyDetails();
+
+    
+  }, [propertyId]);
+  
+  const handleSubmit = async(e) => {
     e.preventDefault();
+
     try {
-      const response = await fetch('http://localhost:3000/api/admin/create-property', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+        const response = await fetch(`http://localhost:3000/api/admin/property/${propertyId}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
           propertyName,
           address,
           saleType,
@@ -36,27 +61,26 @@ const AdminListing = () => {
           beds,
           bathroom,
           description
-        }),
-      });
-
-      if (response.ok) {
-        const result = await response.json();
-        console.log(result); // Handle the response as needed
-      } else {
-        console.error('Error:', response.status, response.statusText);
+          }),
+        });
+  
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        // Redirect back to the property list after update
+        navigate('/admin/admin-dashboard');
+      } catch (error) {
+        console.error('Error updating property:', error.message);
       }
-      setPropertyName(''),setAddress(''),setAddedPhotos([]),setAreaSq(''), setBathroom(''), setBeds(''), setFeatured('yes'), setSaleType('forsale'), setNeighbourHood('bronte'), setPropertyType('residentail'), setPhotoLink([]), setDescription('')
-    } catch (error) {
-      console.error('Error:', error);
-    }
-   }
 
+  }
+  
   return (
     <div>
         <AdminNavbar/>
         <div className='mt-3'>
         <AdminForm
-        type="Create"
+        type="Edit"
         handleSubmit={handleSubmit}
         propertyName={propertyName}
         setPropertyName={setPropertyName}
@@ -88,4 +112,4 @@ const AdminListing = () => {
   )
 }
 
-export default AdminListing
+export default EditProperty
