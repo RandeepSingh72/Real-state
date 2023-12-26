@@ -20,6 +20,15 @@ import AdminDashboard from './admin/AdminDashboard';
 import Admin from './admin/Admin';
 import AdminListing from './admin/AdminListing';
 import EditProperty from './admin/EditProperty';
+import Bronte from './pages/Bronte';
+import BronteCreek from './pages/BronteCreek';
+import Burlington from './pages/Burlington';
+import Mississauga from './pages/Mississauga';
+import Oakville from './pages/Oakville';
+import CollegePark from './pages/CollegePark';
+import ClearView from './pages/ClearView';
+import Brampton from './pages/Brampton';
+import Gta from './pages/Gta';
 
 function App() {
   const location = useLocation();
@@ -38,7 +47,15 @@ function App() {
       <Route path='/about-page' element={<AboutPage/>}/>
       <Route path='/team-page' element={<Team/>}/>
       <Route path='/neighbourhoods' element={<MarketPage/>}/>
-      <Route path='/neighbourhoods/:id' element={<MarketDetailPage/>}/>
+      <Route path='/neighbourhoods/bronte' element={<Bronte/>}/>
+      <Route path='/neighbourhoods/bronte-creek' element={<BronteCreek/>}/>
+      <Route path='/neighbourhoods/burlington' element={<Burlington/>}/>
+      <Route path='/neighbourhoods/mississauga' element={<Mississauga/>}/>
+      <Route path='/neighbourhoods/oakville' element={<Oakville/>}/>
+      <Route path='/neighbourhoods/college-park' element={<CollegePark/>}/>
+      <Route path='/neighbourhoods/clear-view' element={<ClearView/>}/>
+      <Route path='/neighbourhoods/brampton' element={<Brampton/>}/>
+      <Route path='/neighbourhoods/gta' element={<Gta/>}/>
       <Route path='/listing-page' element={<ListingPage/>}/>
       <Route path='/listing-page/:id' element={<ListingDetailPage/>}/>
       <Route path='/services' element={<ServicePage/>}/>

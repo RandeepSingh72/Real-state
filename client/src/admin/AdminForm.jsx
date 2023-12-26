@@ -51,9 +51,9 @@ const AdminForm = ({ type, handleSubmit, addedPhotos, setAddedPhotos, propertyNa
      className="form-select"
      value={saleType}
      onChange={(e) => setSaleType(e.target.value)}>
-    <option value="forsale">For Sale</option>
-    <option value="rent">Rent</option>
-    <option value="soldout">Sold Out</option>
+    <option value="For Sale">For Sale</option>
+    <option value="Rent">Rent</option>
+    <option value="Sold Out">Sold Out</option>
     </select>
   </div>
   <div className="mb-3">
@@ -79,11 +79,11 @@ const AdminForm = ({ type, handleSubmit, addedPhotos, setAddedPhotos, propertyNa
     className="form-select w-100" 
     value={propertyType}
     onChange={(e) => setPropertyType(e.target.value)}>
-    <option value="residential">Residential</option>
-    <option value="townhouse">Townhouse</option>
-    <option value="condo">Condo</option>
-    <option value="commercial">Commercial</option>
-    <option value="multifamily">Multi-Family</option>
+    <option value="Residential">Residential</option>
+    <option value="Townhouse">Townhouse</option>
+    <option value="Condo">Condo</option>
+    <option value="Commercial">Commercial</option>
+    <option value="Multifamily">Multi-Family</option>
     </select>
   </div>
   <div className="mb-3">
@@ -92,15 +92,15 @@ const AdminForm = ({ type, handleSubmit, addedPhotos, setAddedPhotos, propertyNa
     className="form-select w-100"
     value={neighbourhood}
     onChange={(e) => setNeighbourHood(e.target.value)} >
-    <option value="bronte">Bronte</option>
-    <option value="brontecreek">Bronte Creek</option>
-    <option value="burlington">Burlington</option>
-    <option value="oakville">OakVille</option>
-    <option value="clearview">ClearView</option>
-    <option value="collegepark">College Park</option>
-    <option value="mississauga">Mississauga</option>
-    <option value="brampton">Brampton</option>
-    <option value="restofgta">Rest Of GTA</option>
+    <option value="Bronte">Bronte</option>
+    <option value="Bronte Creek">Bronte Creek</option>
+    <option value="Burlington">Burlington</option>
+    <option value="OakVille">OakVille</option>
+    <option value="ClearView">ClearView</option>
+    <option value="College Park">College Park</option>
+    <option value="Mississauga">Mississauga</option>
+    <option value="Brampton">Brampton</option>
+    <option value="Rest of GTA">Rest Of GTA</option>
     </select>
   </div>
   </div>

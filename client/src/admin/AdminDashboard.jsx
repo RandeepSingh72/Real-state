@@ -66,6 +66,7 @@ const AdminDashboard = () => {
                   <img src={property.photoLink[0]} className="artists-image img-fluid" />
               </div>
               <div className="py-3">
+              <button type="button" class="btn btn-primary btn-sm my-2">{property.saleType}</button>
                   <h4>{property.propertyName}</h4>
                   <p><i className="bi bi-pin-map-fill"></i> {property.address}</p>
                   

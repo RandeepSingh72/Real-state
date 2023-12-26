@@ -29,9 +29,18 @@ const AdminNavbar = () => {
           </button>
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav">
+            <li className="nav-item">
+                <Link
+                  className="nav-link mx-3"
+                  to={'/'}
+                  aria-current="page"
+                >
+                  Home
+                </Link>
+              </li>
               <li className="nav-item">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary mx-3 my-3"
                   onClick={()=>handleLogout()}
                   aria-current="page"
                 >

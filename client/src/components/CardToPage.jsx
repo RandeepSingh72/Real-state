@@ -15,12 +15,12 @@ const CardToPage = () => {
                     <div className="col-lg-4 col-12">
                         <div className="artists-thumb">
                             <div className="artists-image-wrap">
-                                <Link to={'/'}>
+                                <Link to={'/listing-page'}>
                                 <img src={card1} className="artists-image img-fluid" />
                                </Link>
                             </div>
                             <div className="py-3 text-center">
-                                <Link to>
+                                <Link to={'/listing-page'}>
                                 <h3>Listing</h3>
                             </Link>
                             </div>
@@ -29,12 +29,12 @@ const CardToPage = () => {
                     <div className="col-lg-4 col-12">
                         <div className="artists-thumb">
                             <div className="artists-image-wrap">
-                                <Link to={'/'}>
+                                <Link to={'/services'}>
                                 <img src={card2} className="artists-image img-fluid" />
                                 </Link>
                             </div>
                             <div className="py-3 text-center">
-                                <Link to={'/'}>
+                                <Link to={'/services'}>
                                 <h3>Services</h3></Link>
                             </div>
                      </div>
@@ -42,12 +42,12 @@ const CardToPage = () => {
                     <div className="col-lg-4 col-12">
                         <div className="artists-thumb">
                             <div className="artists-image-wrap">
-                                <Link to={'/'}>
+                                <Link to={'/neighbourhoods'}>
                                 <img src={card3} className="artists-image img-fluid" />
                                </Link>
                             </div>
                             <div className="py-3 text-center">
-                                <Link to={'/'}>
+                                <Link to={'/neighbourhoods'}>
                                 <h3>Neighbourhoods</h3></Link>
                             </div>
                      </div>

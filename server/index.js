@@ -77,7 +77,6 @@ app.get('/api/admin/properties', async (req, res) => {
     // Fetch all properties from the database
     const properties = await Property.find({});
     res.json(properties);
-    console.log(properties);
   } catch (error) {
     console.error('Error fetching properties:', error);
     res.status(500).json({ error: 'Internal Server Error' });

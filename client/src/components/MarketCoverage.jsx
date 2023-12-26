@@ -21,7 +21,7 @@ const MarketCoverage = () => {
                             <img className="img-fluid" src={city1} alt="city" />
                             <div className="overlay">
                                <h2>Bronte</h2>
-                               <Link className="info" to={'/neighbourhoods/:id'}>VIEW</Link>
+                               <Link className="info" to={'/neighbourhoods/bronte'}>VIEW</Link>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Bronte Creek</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/:id'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/bronte-creek'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -42,7 +42,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Burlington</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/:id'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/burlington'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -53,7 +53,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Oakville</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/:id'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/oakville'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -64,7 +64,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Clearview</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/:id'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/clear-view'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -75,7 +75,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>College Park</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/:id'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/college-park'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -86,7 +86,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Mississauga</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/:id'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/mississauga'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -97,7 +97,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Brampton</h2>
                                     <p>
-                                        <Link to={'/neighbourhoods/:id'}>VIEW</Link>
+                                        <Link to={'/neighbourhoods/brampton'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -108,7 +108,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Rest of GTA</h2>
                                     <p>
-                                        <Link to={'/neighbourhoods/:id'}>VIEW</Link>
+                                        <Link to={'/neighbourhoods/gta'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
