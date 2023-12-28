@@ -31,7 +31,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Bronte Creek</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/bronte-creek'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/brontecreek'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -64,7 +64,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>Clearview</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/clear-view'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/clearview'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>
@@ -75,7 +75,7 @@ const MarketCoverage = () => {
                                 <div className="overlay">
                                     <h2>College Park</h2>
                                     <p>
-                                    <Link to={'/neighbourhoods/college-park'}>VIEW</Link>
+                                    <Link to={'/neighbourhoods/collegepark'}>VIEW</Link>
                                     </p>
                                 </div>
                         </div>

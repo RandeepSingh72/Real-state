@@ -10,6 +10,7 @@ import MarketCoverage from '../components/MarketCoverage';
 import PressMedia from '../components/PressMedia';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import FeaturedListing from '../components/FeaturedListing';
 
 const HomePage = () => {
   return (
@@ -17,7 +18,7 @@ const HomePage = () => {
         <Header/>
         <About/>
         <CardToPage/>
-        <Listing/>
+        <FeaturedListing/>
         <PropertySpotlight/>
         <MarketCoverage/>
         <PressMedia/>

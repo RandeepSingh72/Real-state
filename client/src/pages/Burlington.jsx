@@ -1,11 +1,13 @@
 import React from 'react'
 import video from "../assets/video/bronte.mp4";
 import Footer from '../components/Footer'
-import Listing from '../components/Listing'
 import img3 from '../assets/images/cities/3.jpg';
 import CommonCarousel from '../components/CommonCarousel';
+import GeoListing from '../components/GeoListing';
+import { useLocation } from 'react-router-dom';
 
 const Burlington = () => {
+  const {pathname} = useLocation()
   return (
     <div>
     <section className="hero-section" id="section_1">
@@ -64,55 +66,7 @@ const Burlington = () => {
       <CommonCarousel />
     </section>
 
-    <section className="testimonial py-5" style={{background: "#ebebeb"}}>
-      <div className="container py-5">
-        <div className="row">
-          <h3 className="text-center ">PROPERTY LISTINGS</h3>
-
-          <div className="search">
-            <input
-              type="text"
-              className="serachbtn lp-input--dark"
-              placeholder="Search by address, city, state, zip..."
-              id="search-input"
-              name="search-input"
-            />
-          </div>
-
-          <div className="col-md-4">
-            <select className=" w-100 serachbtn">
-              <option>Select property type</option>
-              <option>Residential</option>
-              <option>Townhouse</option>
-              <option>Condo</option>
-              <option>Commercial</option>
-              <option>Multi-Family</option>
-            </select>
-          </div>
-          <div className="col-md-4">
-            <select className=" w-100 serachbtn">
-              <option>1+ Bathrooms</option>
-              <option>2+ Bathrooms</option>
-              <option>3+ Bathrooms</option>
-              <option>4+ Bathrooms</option>
-              <option>5+ Bathrooms</option>
-              <option>6+ Bathrooms</option>
-            </select>
-          </div>
-          <div className="col-md-4">
-            <select className=" w-100 serachbtn">
-              <option>1+ Bedrooms</option>
-              <option>2+ Bedrooms</option>
-              <option>3+ Bedrooms</option>
-              <option>4+ Bedrooms</option>
-              <option>5+ Bedrooms</option>
-              <option>6+ Bedrooms</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <Listing/>
-    </section>
+   <GeoListing params={pathname}/>
 
     <Footer />
   </div>

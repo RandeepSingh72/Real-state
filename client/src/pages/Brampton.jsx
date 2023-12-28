@@ -4,8 +4,11 @@ import city8 from "../assets/images/cities/8.jpg";
 import CommonCarousel from "../components/CommonCarousel";
 import Listing from '../components/Listing'
 import Footer from '../components/Footer'
+import { useLocation } from 'react-router-dom';
+import GeoListing from '../components/GeoListing';
 
 const Brampton = () => {
+  const {pathname} = useLocation()
   return (
     <div>
     <section className="hero-section" id="section_1">
@@ -49,7 +52,7 @@ const Brampton = () => {
               </p>
               <p className="text-dark text-justify">In that same year Brampton was incorporated as a village.[9] In 1866, the town became the county seat and the location of the Peel County Courthouse which was built in 1865–66; a three-storey County jail was added at the rear in 1867.</p>
 
-              <p class="mb-0 text-dark text-justify">Edward Dale, an immigrant from Dorking, England, established a flower nursery in Brampton[10] shortly after his arrival in 1863.[11] Dale's Nursery became the town's largest[10] and most prominent employer, developed a flower grading system,[11] and established a global export market for its products.[10] The company chimney was a town landmark,[11] until Brampton Town Council allowed it to be torn down in 1977.[11] At its height, the company had 140 greenhouses,[12] and was the largest cut flower business in North America,[13] producing 20 million blooms and introducing numerous rose and orchid varietals and species to the market.[13] It also spurred the development of other nurseries in the town. Forty-eight hothouse flower nurseries once did business in the town</p>
+              <p className="mb-0 text-dark text-justify">Edward Dale, an immigrant from Dorking, England, established a flower nursery in Brampton[10] shortly after his arrival in 1863.[11] Dale's Nursery became the town's largest[10] and most prominent employer, developed a flower grading system,[11] and established a global export market for its products.[10] The company chimney was a town landmark,[11] until Brampton Town Council allowed it to be torn down in 1977.[11] At its height, the company had 140 greenhouses,[12] and was the largest cut flower business in North America,[13] producing 20 million blooms and introducing numerous rose and orchid varietals and species to the market.[13] It also spurred the development of other nurseries in the town. Forty-eight hothouse flower nurseries once did business in the town</p>
             </div>
           </div>
         </div>
@@ -62,55 +65,7 @@ const Brampton = () => {
       <CommonCarousel />
     </section>
 
-    <section className="testimonial py-5" style={{background: "#ebebeb"}}>
-      <div className="container py-5">
-        <div className="row">
-          <h3 className="text-center ">PROPERTY LISTINGS</h3>
-
-          <div className="search">
-            <input
-              type="text"
-              className="serachbtn lp-input--dark"
-              placeholder="Search by address, city, state, zip..."
-              id="search-input"
-              name="search-input"
-            />
-          </div>
-
-          <div className="col-md-4">
-            <select className=" w-100 serachbtn">
-              <option>Select property type</option>
-              <option>Residential</option>
-              <option>Townhouse</option>
-              <option>Condo</option>
-              <option>Commercial</option>
-              <option>Multi-Family</option>
-            </select>
-          </div>
-          <div className="col-md-4">
-            <select className=" w-100 serachbtn">
-              <option>1+ Bathrooms</option>
-              <option>2+ Bathrooms</option>
-              <option>3+ Bathrooms</option>
-              <option>4+ Bathrooms</option>
-              <option>5+ Bathrooms</option>
-              <option>6+ Bathrooms</option>
-            </select>
-          </div>
-          <div className="col-md-4">
-            <select className=" w-100 serachbtn">
-              <option>1+ Bedrooms</option>
-              <option>2+ Bedrooms</option>
-              <option>3+ Bedrooms</option>
-              <option>4+ Bedrooms</option>
-              <option>5+ Bedrooms</option>
-              <option>6+ Bedrooms</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <Listing/>
-    </section>
+   <GeoListing params={pathname}/>
 
     <Footer />
   </div>

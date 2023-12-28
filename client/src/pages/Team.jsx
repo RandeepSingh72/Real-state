@@ -8,12 +8,8 @@ const Team = () => {
   return (
     <main>
         <section className="ticket-section section-padding">
-            {/**  <div className="section-overlay"></div> */ }
-
             <div className="container">
-
             </div>
-               
         </section>
 
       <section className="bg-white about-section section-padding" id="section_2">

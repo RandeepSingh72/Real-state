@@ -10,7 +10,6 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import Team from './pages/Team';
 import MarketPage from './pages/MarketPage';
-import MarketDetailPage from './pages/MarketDetailPage';
 import ListingPage from './pages/ListingPage';
 import ListingDetailPage from './pages/ListingDetailPage';
 import ServicePage from './pages/ServicePage';
@@ -48,16 +47,16 @@ function App() {
       <Route path='/team-page' element={<Team/>}/>
       <Route path='/neighbourhoods' element={<MarketPage/>}/>
       <Route path='/neighbourhoods/bronte' element={<Bronte/>}/>
-      <Route path='/neighbourhoods/bronte-creek' element={<BronteCreek/>}/>
+      <Route path='/neighbourhoods/brontecreek' element={<BronteCreek/>}/>
       <Route path='/neighbourhoods/burlington' element={<Burlington/>}/>
       <Route path='/neighbourhoods/mississauga' element={<Mississauga/>}/>
       <Route path='/neighbourhoods/oakville' element={<Oakville/>}/>
-      <Route path='/neighbourhoods/college-park' element={<CollegePark/>}/>
-      <Route path='/neighbourhoods/clear-view' element={<ClearView/>}/>
+      <Route path='/neighbourhoods/collegepark' element={<CollegePark/>}/>
+      <Route path='/neighbourhoods/clearview' element={<ClearView/>}/>
       <Route path='/neighbourhoods/brampton' element={<Brampton/>}/>
       <Route path='/neighbourhoods/gta' element={<Gta/>}/>
       <Route path='/listing-page' element={<ListingPage/>}/>
-      <Route path='/listing-page/:id' element={<ListingDetailPage/>}/>
+      <Route path='/listing-page/:propertyId' element={<ListingDetailPage/>}/>
       <Route path='/services' element={<ServicePage/>}/>
       <Route path='/contact' element={<ContactPage/>}/>
       <Route path='/admin-login' element={<AdminLogin/>} />

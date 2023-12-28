@@ -1,128 +1,135 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { useParams } from "react-router-dom";
 import PropertySpotlight from "../components/PropertySpotlight";
 
-import img1 from "../assets/images/Fateh_burj_Minar_in_chapparchiri.jpg";
-import img2 from "../assets/images/-1173169478.jpg";
-import img3 from "../assets/images/-1246815963.jpg";
 import bathtub from "../assets/bath-tub.png";
 import bed from "../assets/double-bed.png";
 import fullSize from "../assets/full-size.png";
+
 import Footer from "../components/Footer";
 
 
 const ListingDetailPage = () => {
+  const { propertyId } = useParams();
+  const [property, setProperty] = useState({
+    photoLink: [],
+    saleType: "",
+    propertyName: "",
+    address: "",
+    description: "",
+    bathroom: "",
+    beds: "",
+    areaSq: "",
+  });
+
+  useEffect(() => {
+    const fetchPropertyDetails = async () => {
+      try {
+        const response = await fetch(`http://localhost:3000/api/admin/properties/${propertyId}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setProperty(data);
+        console.log(property);
+      } catch (error) {
+        console.error('Error fetching property details:', error.message);
+      }
+    };
+
+    fetchPropertyDetails();
+  }, [propertyId]);
+
   return (
     <div>
+       <section className="ticket-section section-padding">
+            <div className="container">
+            </div>
+        </section>
+    {property && (
       <div id="carouselExampleIndicators" className="carousel slide listing-carousel">
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            className="active h-25 w-25"
-            aria-current="true"
-            aria-label="Slide 1"
-          >
-            <img src={img1} alt="img" className="d-block w-100" />
-          </button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-            className="h-25 w-25"
-          >
-            <img src={img2} alt="img" className="d-block w-100" />
-          </button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-            className="h-25 w-25"
-          >
-            <img src={img3} alt="img-2" className="d-block w-100" />
-          </button>
-        </div>
-        <div className="carousel-inner listing-inner">
-          <div className="carousel-item active">
-            <img src={img1} className="d-block w-100 h-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={img2} className="d-block w-100 h-100" alt="..." />
-          </div>
-          <div className="carousel-item">
-            <img src={img3} className="d-block w-100 h-100" alt="..." />
-          </div>
-        </div>
+      <div className="carousel-indicators">
         <button
-          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
+          data-bs-slide-to="0"
+          className="active h-25 w-25"
+          aria-current="true"
+          aria-label="Slide 1"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
+         <img src={property.photoLink[0]} alt="img" className="d-block w-100" />
         </button>
         <button
-          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+          className="h-25 w-25"
         >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
+          <img src={property.photoLink[1]} alt="img" className="d-block w-100" />
+        </button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+          className="h-25 w-25"
+        >
+          <img src={property.photoLink[2]} alt="img-2" className="d-block w-100" />
         </button>
       </div>
-
+      <div className="carousel-inner listing-inner">
+        <div className="carousel-item active">
+          <img src={property.photoLink[0]} className="d-block w-100 h-100" alt="property-pic" />
+        </div>
+        <div className="carousel-item">
+          <img src={property.photoLink[1]} className="d-block w-100 h-100" alt="property-pic" />
+        </div>
+        <div className="carousel-item">
+          <img src={property.photoLink[2]} className="d-block w-100 h-100 img-fluid" alt="property-pic" />
+        </div>
+      </div>
+      <button
+        className="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span
+          className="carousel-control-prev-icon"
+          aria-hidden="true"
+        ></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button
+        className="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span
+          className="carousel-control-next-icon"
+          aria-hidden="true"
+        ></span>
+        <span className="visually-hidden">Next</span>
+      </button>
+    </div>
+    )}  
       <section className="section-padding">
         <div className="container">
           <div className="row">
             <div className="col-md-8">
               <button type="button" className="btn btn-primary">
-                For Sale
+                {property.saleType}
               </button>
               <div className="titlepro">
-                <h3>255 NYLA COURT</h3>
-                <p>255 NYLA COURT, OAKVILLE, ON L6L 0G8</p>
+                <h3>{property.propertyName}</h3>
+                <p>{property.address}</p>
               </div>
 
               <div className="prodesc">
                 <p>
-                  Best of everything!! Fernbrook Showstopper in West Oakville!
-                  Stunning executive residence with 4 + 1 bedrooms, 5.5
-                  bathrooms, approx 4193 sq ft plus professionally finished
-                  lookout basement by the builder on largest court lot with 218'
-                  deep & 177' rear with cedar fencing & large covered terrace in
-                  the huge backyard.Exclusive quiet court with only 14 homes
-                  surrounding the recently created Hixon Park. Extensive
-                  upgrades including, wide-plank engineered hardwood flooring,
-                  elevator with access to the attached garage, plaster crown
-                  mouldings, 10’ & 9’ ceilings, 3 gas fireplaces, numerous pot
-                  lights, upgraded light fixtures, Hunter Douglas window
-                  coverings & shutters, upgraded tiles, Cat 6A wiring, ethernet
-                  in all rooms, cabinetry, stone counters, enlarged basement
-                  windows & whole home water purification system. Grand dining
-                  room with a coffered ceiling & French door to a servery.
-                  Impressive great room with a vaulted ceiling, gas fireplace &
-                  huge windows. Spectacular Downsview kitchen with
-                  floor-to-ceiling cabinetry, under-cabinet lighting, island
-                  with breakfast bar, quartz counters, Wolf & SubZero
-                  appliances, & breakfast room with walkout to terrace. Main
-                  floor sunroom/office, powder room, mudroom & 2nd floor laundry
-                  room. All upstairs bedrooms have ensuite bathrooms & the
-                  primary bedroom features a gas fireplace & luxe 5-piece
-                  ensuite bath with soaker tub & glass shower. Downstairs offers
-                  a recreation/theatre room with gas fireplace & built-in
-                  speakers, a games room, wet bar, gym, bedroom 5 & 3-piece
-                  bathroom. Close to lake, Bronte Village, highways & GO Train.
-                  10+!
+                 {property.description}
                 </p>
               </div>
             </div>
@@ -136,7 +143,7 @@ const ListingDetailPage = () => {
                     >
                       <img src={bathtub} className="img-fluid" />
                     </span>
-                    6 bath
+                    {property.bathroom} bathrooms
                   </div>
                   <div className="list-group-item">
                     <div
@@ -145,7 +152,7 @@ const ListingDetailPage = () => {
                     >
                       <img src={bed} className="img-fluid" />
                     </div>
-                    3 Bed
+                    {property.beds} Beds
                   </div>
                   <div className="list-group-item">
                     <div
@@ -154,7 +161,7 @@ const ListingDetailPage = () => {
                     >
                       <img src={fullSize} className="img-fluid" />
                     </div>
-                    4,193 SQ.FT. LIVING AREA
+                    {property.areaSq} SQ.FT. LIVING AREA
                   </div>
                 </ul>
               </div>

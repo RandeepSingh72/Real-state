@@ -84,6 +84,7 @@ app.get('/api/admin/properties', async (req, res) => {
 });
 
 app.delete('/api/admin/properties/:id', async (req, res) => {
+  await mongoose.connect(process.env.MONGO_DB_URL)
   try {
     const propertyId = req.params.id;
     const deletedProperty = await Property.findByIdAndDelete(propertyId);
@@ -142,6 +143,18 @@ app.put('/api/admin/property/:propertyId', async (req, res) => {
   }
 });
 
+app.get('/api/admin/properties/by-location/:location', async (req, res) => {
+  await mongoose.connect(process.env.MONGO_DB_URL)
+  try {
+    const location = req.params.location;
+    // Use a regular expression for case-insensitive search
+    const properties = await Property.find({ neighbourhood: location });
+    res.json(properties);
+  } catch (error) {
+    console.error('Error fetching properties by location:', error.message);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 // Protected route (requires valid JWT)
 app.get('/api/admin/data', authenticateToken, (req, res) => {

@@ -1323,18 +1323,6 @@ footer {
   padding-top: 36px;
 }
 
-
-.carousel-inner:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 1;
-}
-
 .admin{
   width: 25px;
   height: 25px;
@@ -1359,7 +1347,7 @@ footer {
   min-width: 100px;
   width: 200px;
 }
-.listing-carousel{
+/*.listing-carousel{
   height: 80vh;
 }
 .listing-inner{
@@ -1367,10 +1355,15 @@ footer {
 }
 .carousel-item{
   height: 100%;
-}
+}*/
 .pic-div{
   display: flex;
   flex-direction: row;
   width: 25%;
   gap: 5px;
+}
+.admin-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
 }

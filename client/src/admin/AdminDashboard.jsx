@@ -56,17 +56,18 @@ const AdminDashboard = () => {
       <div>
         <Link to={'/admin/admin-listing'} className='btn btn-primary mt-3 mx-3'>Add New Property</Link>
       </div>
-      <div className='container-fluid d-flex flex-wrap'>
-      {properties && (
+      <div className='container'>
+        <div className='row'>
+          {properties && (
         properties.map((property, index)=>(
-          <div key={`index-${index+1}`} className="col-lg-4 col-12 m-2">
+          <div key={`index-${index+1}`} className="col-lg-4 col-md-6 col-12 mb-3">
           <div className="shad p-3" >
  
               <div className="artists-image-wrap">
-                  <img src={property.photoLink[0]} className="artists-image img-fluid" />
+                  <img src={property.photoLink[0]} className="artists-image img-fluid" style={{ height: '200px', objectFit: 'cover' }} />
               </div>
               <div className="py-3">
-              <button type="button" class="btn btn-primary btn-sm my-2">{property.saleType}</button>
+              <button type="button" className="btn btn-primary btn-sm my-2">{property.saleType}</button>
                   <h4>{property.propertyName}</h4>
                   <p><i className="bi bi-pin-map-fill"></i> {property.address}</p>
                   
@@ -85,7 +86,8 @@ const AdminDashboard = () => {
       </div>
         ))
       )
-      }
+        }
+      </div>
       </div>
     </div>
   )
