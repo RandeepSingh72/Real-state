@@ -11,7 +11,7 @@ const AdminLogin = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://real-state-a2po.vercel.app/api/admin/login', {
+      const response = await fetch('https://real-state-2969.onrender.com/api/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

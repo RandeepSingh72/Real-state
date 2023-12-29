@@ -7,7 +7,7 @@ const FeaturedListing = () => {
     useEffect(() => {
         const fetchFeaturedProperties = async () => {
           try {
-            const response = await fetch('https://real-state-a2po.vercel.app/api/admin/properties');
+            const response = await fetch('https://real-state-2969.onrender.com/api/admin/properties');
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
             }

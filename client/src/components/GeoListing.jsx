@@ -18,7 +18,7 @@ const GeoListing = ({params}) => {
   useEffect(() => {
     const fetchPropertiesByLocation = async () => {
       try {
-        const response = await fetch(`https://real-state-a2po.vercel.app/api/admin/properties/by-location/${lastSegment}`);
+        const response = await fetch(`https://real-state-2969.onrender.com/api/admin/properties/by-location/${lastSegment}`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }

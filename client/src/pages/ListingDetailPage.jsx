@@ -25,7 +25,7 @@ const ListingDetailPage = () => {
   useEffect(() => {
     const fetchPropertyDetails = async () => {
       try {
-        const response = await fetch(`https://real-state-a2po.vercel.app/api/admin/properties/${propertyId}`);
+        const response = await fetch(`https://real-state-2969.onrender.com/api/admin/properties/${propertyId}`);
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
