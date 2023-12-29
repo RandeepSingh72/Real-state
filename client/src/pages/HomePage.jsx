@@ -4,7 +4,6 @@ import React from 'react'
 import Header from '../components/Header';
 import About from '../components/About';
 import CardToPage from '../components/CardToPage';
-import Listing from '../components/Listing';
 import PropertySpotlight from '../components/PropertySpotlight';
 import MarketCoverage from '../components/MarketCoverage';
 import PressMedia from '../components/PressMedia';

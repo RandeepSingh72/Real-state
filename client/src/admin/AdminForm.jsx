@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { storage, ref, uploadBytes, getDownloadURL } from '../firebase/firebase';
 
 const AdminForm = ({ type, handleSubmit, addedPhotos, setAddedPhotos, propertyName, setPropertyName, propertyType, setPropertyType, address, setAddress, saleType, setSaleType, featured, setFeatured, areaSq, setAreaSq, neighbourhood, setNeighbourHood, photoLink, setPhotoLink, beds, setBeds, bathroom, setBathroom, description, setDescription}) => {

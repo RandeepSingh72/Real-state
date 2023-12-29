@@ -24,7 +24,7 @@ const EditProperty = () => {
   useEffect(() => {
     const fetchPropertyDetails = async () => {
         try {
-          const response = await fetch(`http://localhost:3000/api/admin/properties/${propertyId}`);
+          const response = await fetch(`https://real-state-a2po.vercel.app/api/admin/properties/${propertyId}`);
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
@@ -44,7 +44,7 @@ const EditProperty = () => {
     e.preventDefault();
 
     try {
-        const response = await fetch(`http://localhost:3000/api/admin/property/${propertyId}`, {
+        const response = await fetch(`https://real-state-a2po.vercel.app/api/admin/property/${propertyId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

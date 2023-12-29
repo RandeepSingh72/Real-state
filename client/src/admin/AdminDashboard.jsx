@@ -8,7 +8,7 @@ const AdminDashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/admin/properties');
+      const response = await fetch('https://real-state-a2po.vercel.app/api/admin/properties');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:3000/api/admin/properties/${propertyId}`, {
+      const response = await fetch(`https://real-state-a2po.vercel.app/api/admin/properties/${propertyId}`, {
         method: 'DELETE',
       });
 

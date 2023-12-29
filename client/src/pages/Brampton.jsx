@@ -2,7 +2,6 @@ import React from 'react'
 import video from "../assets/video/bronte.mp4";
 import city8 from "../assets/images/cities/8.jpg";
 import CommonCarousel from "../components/CommonCarousel";
-import Listing from '../components/Listing'
 import Footer from '../components/Footer'
 import { useLocation } from 'react-router-dom';
 import GeoListing from '../components/GeoListing';

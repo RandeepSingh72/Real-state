@@ -19,7 +19,7 @@ const AdminListing = () => {
    const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/admin/create-property', {
+      const response = await fetch('https://real-state-a2po.vercel.app/api/admin/create-property', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
