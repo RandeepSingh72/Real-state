@@ -11,6 +11,12 @@ const port = process.env.PORT || 3000
 const cors = require('cors');
 
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://real-state-seven-beta.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 app.use(cors())
 
 app.get('/', (req, res) => {
